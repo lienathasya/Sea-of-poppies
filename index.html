@@ -2,25 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sea of Poppies Project</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
+            width: 100%;
             overflow: hidden;
+            background-color: #ffffff;
+        }
+        /* This container forces the browser to treat the iframe as a true full-screen mobile app */
+        .map-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-overflow-scrolling: touch; /* Fixes scrolling cuts on iOS/Android */
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <iframe src="https://storymaps.arcgis.com/stories/3162d083388a40cc811a63644d92818c" allowfullscreen allow="geolocation"></iframe>
+    <div class="map-wrapper">
+        <iframe src="https://arcgis.com" allowfullscreen allow="geolocation"></iframe>
+    </div>
 
 </body>
 </html>
